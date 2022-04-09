@@ -1,0 +1,19 @@
+<%- include('partial/header'); -%>
+
+<h1>Hallo!</h1>
+<h3>Home</h3>
+<p><%= home %></p>
+
+<div class="div-overflow">
+    <%# Prints posts %>
+    <% if (posts) { %>
+        <% posts.forEach(function(post) { %>
+            <h3 style="margin-top:0px; margin-bottom:0px;"><%= _.upperFirst(post.title); %></h3> 
+            <p><%= _.truncate(post.text, {'length': 100}); %> <a href="<%= Hyperlink %><%='post/' + post.title%>" title="<%= _.upperFirst(post.title); %>">Read more</a></p>
+        <% }); %>
+    <% } %>
+</div>
+
+<a href="http://localhost:3000/compose" class="btn btn-primary">Add new post</a>
+
+<%- include('partial/footer'); -%>
