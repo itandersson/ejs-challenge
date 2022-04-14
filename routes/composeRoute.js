@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 
 router.post('/', 
   body('title').isLength({ max: 15 }).isAlphanumeric('sv-SE'),
-  body('text').isLength({ max: 500 }).isAlphanumeric('sv-SE', {'ignore': ' -'}),
+  body('text').isLength({ max: 800 }).isAlphanumeric('sv-SE', {'ignore': ' -,.'}),
   (req, res) => {
   
   // Finds the validation errors in this request
