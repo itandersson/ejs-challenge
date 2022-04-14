@@ -4,7 +4,7 @@ var options = {
   useMongoClient: true,
   useNewUrlParser: true, 
   useUnifiedTopology: true, 
-  //serverApi: ServerApiVersion.v1
+  serverApi: ServerApiVersion.v1
 };
 
 var options2 = {
@@ -42,7 +42,7 @@ mongoose.connect(
 );
 */
 
-const conn = mongoose.connect(uri);
+const conn = mongoose.connect(uri, options);
 
 
 
